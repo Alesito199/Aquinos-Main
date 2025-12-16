@@ -1,0 +1,12 @@
+{"timestamp":"2025-08-15 13:41:29","ip":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36 Edg\/139.0.0.0","event":"SUCCESSFUL_LOGIN","details":{"username":"cnaupholstery0@gmail.com","ip":"::1"},"request_uri":"\/cna-upholstery-system\/login.php?lang=es"}
+2025-08-15 09:58:34 | USER_LOGOUT | {"username":"cnaupholstery0@gmail.com"}
+{"timestamp":"2025-08-15 14:00:00","ip":"::1","user_agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36 Edg\/139.0.0.0","event":"SUCCESSFUL_LOGIN","details":{"username":"cnaupholstery0@gmail.com","ip":"::1"},"request_uri":"\/cna-upholstery-system\/login.php?lang=en"}
+2025-08-15 10:01:30 | USER_LOGOUT | {"username":"cnaupholstery0@gmail.com"}
+2025-08-15 10:02:44 | USER_LOGOUT | {"username":"cnaupholstery0@gmail.com"}
+2025-08-15 10:02:59 | SUCCESSFUL_LOGIN | {"username":"cnaupholstery0@gmail.com","ip":"::1"}
+2025-08-15 18:55:02 | SUCCESSFUL_LOGIN | {"username":"cnaupholstery0@gmail.com","ip":"::1"}
+2025-08-15 20:32:17 | USER_LOGOUT | {"username":"cnaupholstery0@gmail.com"}
+2025-08-15 20:34:49 | SUCCESSFUL_LOGIN | {"username":"cnaupholstery0@gmail.com","ip":"::1"}
+2025-08-15 20:37:12 | USER_LOGOUT | {"username":"cnaupholstery0@gmail.com"}
+2025-08-15 21:12:30 | SUCCESSFUL_LOGIN | {"username":"cnaupholstery0@gmail.com","ip":"::1"}
+2025-08-15 22:50:37 | USER_LOGOUT | {"username":"cnaupholstery0@gmail.com"}
