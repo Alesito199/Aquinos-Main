@@ -13,12 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/../includes/functions.php';
 
-// Información de la empresa
-define('COMPANY_NAME', 'CNA Upholstery');
-define('COMPANY_OWNER', 'Claudio N Aquino');
-define('COMPANY_PHONE', '908-510-9157');
-define('COMPANY_EMAIL', 'cnaupholstery0@gmail.com');
-define('COMPANY_ADDRESS', '29 Downstream Drive, Flanders, NJ, 07836');
+
 
 // URLs base
 define('BASE_URL', 'http://localhost/cna-upholstery-system/');
