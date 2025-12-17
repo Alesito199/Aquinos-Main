@@ -377,16 +377,16 @@ El sistema soporta **inglés** y **español** completamente:
 ## 📸 Capturas de Pantalla
 
 ### Landing Page
-```
-<img width="1886" height="862" alt="image" src="https://github.com/user-attachments/assets/f0fe183c-32a3-412d-9d9a-59bf18664cb5"/>
 
-```
+<div>
+<img width="1886" height="862" alt="image" src="https://github.com/user-attachments/assets/f0fe183c-32a3-412d-9d9a-59bf18664cb5"/>
+</div>
 
 ### Panel Administrativo
-```
+<div>
 <img width="1900" height="604" alt="image" src="https://github.com/user-attachments/assets/f33d2259-163d-4c66-8241-c285a198bf81" />
+</div>
 
-```
 
 
 ## 🤝 Contribuciones
