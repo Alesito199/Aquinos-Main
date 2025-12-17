@@ -6,7 +6,7 @@
 
 // Datos del administrador
 const ADMIN_USERNAME = 'cnaupholstery0@gmail.com';
-const ADMIN_PASSWORD_HASH = '$argon2id$v=19$m=65536,t=4,p=3$eVRRZ1dMa2ptWk8ydjlVTA$bDANM4fo0EkM9jsEAEVL6cKOAi5tT0aFuGDV1vE48Ac'; // Hash para: Claudio@quino!@!Yegros
+const ADMIN_PASSWORD_HASH = '123'; 
 
 // Configuración de seguridad
 const MAX_LOGIN_ATTEMPTS = 3;           // Máximo 3 intentos de login
