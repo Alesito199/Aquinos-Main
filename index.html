@@ -508,39 +508,86 @@
     <section id="automatizacion" class="section workflows-section">
       <div class="container">
         <h2>Flujos de Trabajo Inteligentes</h2>
-        <p class="section-subtitle">Workflows inteligentes que optimizan procesos empresariales</p>
-        <div class="workflows-grid">
-          <div class="workflow-item">
-            <div class="workflow-preview">
-              <n8n-workflow-viewer
-                workflow='{"id":"invoice-processor","name":"📄 Procesamiento de Facturas con IA","nodes":[{"id":"form-trigger","name":"Formulario de Facturas","type":"n8n-nodes-base.formTrigger","position":[0,0],"parameters":{"formTitle":"Facturas","formFields":{"values":[{"fieldLabel":"PDF Factura","fieldType":"file"}]},"options":{}}},{"id":"ai-agent","name":"AI Agent","type":"@n8n/n8n-nodes-langchain.agent","position":[300,0],"parameters":{"promptType":"define","text":"Extrae datos de facturas: nombre, apellido, fecha (YYYY-MM-DD), numero_factura, total (como numero)","options":{"systemMessage":"Eres experto en extraccion de datos de facturas. Devuelve solo JSON."}}},{"id":"gemini-model","name":"Google Gemini","type":"@n8n/n8n-nodes-langchain.lmChatGoogleGemini","position":[300,150],"parameters":{"options":{},"modelName":"gemini-2.0-flash"},"credentials":{"googlePalmApi":{"id":"MbyuXYOD1iSUL82x","name":"Google Gemini Api"}}},{"id":"code-parser","name":"JSON Parser","type":"n8n-nodes-base.code","position":[600,0],"parameters":{"jsCode":"const aiOutput = $input.first().json.output; const cleanedString = aiOutput.replace(/```json\\n/g, \"\").replace(/\\n```/g, \"\").trim(); const jsonData = JSON.parse(cleanedString); return jsonData;"}},{"id":"notion-db","name":"Guardar en Notion","type":"n8n-nodes-base.notion","position":[900,0],"parameters":{"resource":"databasePage","databaseId":{"__rl":true,"value":"26913400-2290-80d7-b36e-e5e41b96ed03","mode":"list","cachedResultName":"Facturas"},"propertiesUi":{"propertyValues":[{"key":"Numero de factura|title","title":"={{ $json.numero_factura }}"},{"key":"Nombre y Apellido|rich_text","textContent":"={{ $json.nombre }} {{ $json.apellido }}"},{"key":"Fecha|date","date":"={{ $json.fecha }}"},{"key":"Monto total|number","numberValue":"={{ $json.total }}"}]},"options":{}},"credentials":{"notionApi":{"id":"5UzrZr57B97udBSq","name":"Notion account"}}}],"connections":{"Formulario de Facturas":{"main":[[{"node":"AI Agent","type":"main","index":0}]]},"AI Agent":{"main":[[{"node":"JSON Parser","type":"main","index":0}]]},"Google Gemini":{"ai_languageModel":[[{"node":"AI Agent","type":"ai_languageModel","index":0}]]},"JSON Parser":{"main":[[{"node":"Guardar en Notion","type":"main","index":0}]]}},"active":true}'
-                width="100%" height="500px">
-              </n8n-workflow-viewer>
+        <p class="section-subtitle">Automatizaciones activas que optimizan procesos reales con IA</p>
+        <div class="workflows-grid-new">
+
+          <!-- Workflow 1: Facturas -->
+          <div class="wf-card">
+            <div class="wf-card-header">
+              <div class="wf-icon-wrap">
+                <i class="fas fa-file-invoice"></i>
+              </div>
+              <div class="wf-header-text">
+                <h3>Procesamiento de Facturas con IA</h3>
+                <p>Extracción automática de datos con Google Gemini 2.0</p>
+              </div>
+              <span class="wf-status">🟢 Activo</span>
             </div>
-            <div class="workflow-info">
-              <h3>Asistente AI para Facturas</h3>
-              <p>Asistente inteligente que maneja la extraccion de Facturas recibidas.</p>
-              <div class="workflow-stats">
-                <span class="stat">⚡ 5 nodos</span>
-                <span class="stat">🔄 Activo</span>
+            <div class="wf-flow">
+              <div class="wf-node wf-trigger">
+                <i class="fas fa-file-pdf"></i>
+                <span>Formulario<br>PDF</span>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+              <div class="wf-node wf-ai">
+                <i class="fas fa-brain"></i>
+                <span>AI Agent<br><small>Gemini 2.0</small></span>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+              <div class="wf-node wf-code">
+                <i class="fas fa-code"></i>
+                <span>JSON<br>Parser</span>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+              <div class="wf-node wf-output">
+                <i class="fas fa-database"></i>
+                <span>Notion<br>DB</span>
               </div>
             </div>
-          </div>
-          <div class="workflow-item">
-            <div class="workflow-preview">
-              <n8n-workflow-viewer workflow='{"id":"ai-chatbot","name":"🤖 Asistente Virtual AI","nodes":[{"id":"chat-trigger","name":"Chat Trigger","type":"@n8n/n8n-nodes-langchain.chatTrigger","position":[0,0],"parameters":{"public":true,"options":{"responseMode":"streaming"}}},{"id":"ai-agent","name":"AI Agent","type":"@n8n/n8n-nodes-langchain.agent","position":[300,0],"parameters":{"promptType":"define","text":"Eres un asistente virtual profesional. Ayuda con consultas sobre automatización y desarrollo.","options":{"systemMessage":"Eres un asistente experto en automatización y desarrollo web. Responde de forma profesional y útil."}}},{"id":"gemini-chat","name":"Google Gemini","type":"@n8n/n8n-nodes-langchain.lmChatGoogleGemini","position":[300,150],"parameters":{"options":{}},"credentials":{"googlePalmApi":{"id":"MbyuXYOD1iSUL82x","name":"Google Gemini Api"}}},{"id":"memory","name":"Memory Buffer","type":"@n8n/n8n-nodes-langchain.memoryBufferWindow","position":[450,300],"parameters":{}}],"connections":{"Chat Trigger":{"main":[[{"node":"AI Agent","type":"main","index":0}]]},"Google Gemini":{"ai_languageModel":[[{"node":"AI Agent","type":"ai_languageModel","index":0}]]},"Memory Buffer":{"ai_memory":[[{"node":"AI Agent","type":"ai_memory","index":0}]]}},"active":true}' width="100%" height="450px">
-              </n8n-workflow-viewer>
+            <div class="wf-footer">
+              <span class="wf-stat"><i class="fas fa-project-diagram"></i> 5 nodos</span>
+              <span class="wf-stat"><i class="fas fa-bolt"></i> Tiempo real</span>
+              <span class="wf-stat"><i class="fab fa-google"></i> Gemini AI</span>
+              <span class="wf-stat"><i class="fas fa-book"></i> Notion</span>
             </div>
-            <div class="workflow-info">
-              <h3>Asistente Virtual AI</h3>
-              <p>Asistente inteligente que maneja la interaccion del usuario con la pagina web .</p>
-              <div class="workflow-stats">
-                <span class="stat">⚡ 3 nodos</span>
-                <span class="stat">🤖 Gemini AI</span>
-                <span class="stat">🔄 Activo en la pagina</span>
+          </div>
+
+          <!-- Workflow 2: Chatbot -->
+          <div class="wf-card">
+            <div class="wf-card-header">
+              <div class="wf-icon-wrap wf-icon-purple">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="wf-header-text">
+                <h3>Asistente Virtual AI</h3>
+                <p>Chat inteligente con memoria de conversación y streaming</p>
+              </div>
+              <span class="wf-status">🟢 Activo</span>
+            </div>
+            <div class="wf-flow">
+              <div class="wf-node wf-trigger">
+                <i class="fas fa-comments"></i>
+                <span>Chat<br>Trigger</span>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+              <div class="wf-node wf-ai">
+                <i class="fas fa-brain"></i>
+                <span>AI Agent<br><small>+ Memoria</small></span>
+              </div>
+              <div class="wf-arrow"><i class="fas fa-chevron-right"></i></div>
+              <div class="wf-node wf-output">
+                <i class="fas fa-reply"></i>
+                <span>Respuesta<br><small>Streaming</small></span>
               </div>
             </div>
+            <div class="wf-footer">
+              <span class="wf-stat"><i class="fas fa-project-diagram"></i> 4 nodos</span>
+              <span class="wf-stat"><i class="fas fa-memory"></i> Con memoria</span>
+              <span class="wf-stat"><i class="fas fa-stream"></i> Streaming</span>
+              <span class="wf-stat"><i class="fab fa-google"></i> Gemini AI</span>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
