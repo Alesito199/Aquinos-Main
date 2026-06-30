@@ -3567,3 +3567,188 @@ footer {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+/* ========================================
+   HERO — FOTO + TEXTO LADO A LADO
+   ======================================== */
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-photo-wrap {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 0 0 10px rgba(55, 65, 81, 0.1), var(--shadow-heavy);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 14px rgba(55, 65, 81, 0.12), var(--shadow-heavy);
+}
+
+[data-theme="dark"] .profile-photo {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 10px rgba(156, 163, 175, 0.15), var(--shadow-heavy);
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.75rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+}
+
+[data-theme="dark"] .hero-badge {
+  background: var(--bg-dark);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.hero-online {
+  color: #10b981;
+  font-size: 0.6rem;
+}
+
+/* Responsive hero */
+@media (max-width: 860px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-badges {
+    justify-content: center;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ========================================
+   PORTFOLIO — 2 COLUMNAS IGUALES
+   ======================================== */
+
+.portafolio-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .portafolio-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.proyecto-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .proyecto-card {
+  background: var(--bg-secondary);
+}
+
+.proyecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* AquiSys gradient header */
+.proyecto-image-bg {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aqui-gradient {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d6a9f 50%, #1a4a7a 100%);
+}
+
+.aqui-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aqui-icon {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.aqui-brand {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Keep the proyecto-content uniform height in the 2-col grid */
+.portafolio-grid-2 .proyecto-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.portafolio-grid-2 .proyecto-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

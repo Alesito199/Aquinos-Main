@@ -209,7 +209,7 @@
   }
   </script>
   
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -232,14 +232,24 @@
   </header>
   <main>
     <section id="inicio" class="hero">
-      <div class="hero-text">
-        <h1>Transformamos Ideas en <span class="highlight">Software</span></h1>
-        <p class="hero-subtitle">Soy Nelson Alejandro Ayala Aquino, Ingeniero Informático graduado de la Universidad del
-          Norte (2024). Especializado en PHP, JavaScript y MySQL para crear soluciones web robustas y automatizaciones.
-        </p>
-        <div class="hero-buttons">
-          <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
-          <a href="#portafolio" class="btn btn-secondary">Ver Proyectos en producción</a>
+      <div class="hero-content">
+        <div class="hero-photo-wrap">
+          <img src="aquinoss.jpg" alt="Nelson Aquino" class="profile-photo" />
+        </div>
+        <div class="hero-text">
+          <h1>Transformamos Ideas en <span class="highlight">Software</span></h1>
+          <p class="hero-subtitle">Soy Nelson Alejandro Ayala Aquino, Ingeniero Informático graduado de la Universidad del
+            Norte (2024). Especializado en PHP, JavaScript, NestJS, Flutter y MySQL para crear soluciones web robustas, apps móviles y automatizaciones empresariales.
+          </p>
+          <div class="hero-badges">
+            <span class="hero-badge"><i class="fas fa-map-marker-alt"></i> Paraguay</span>
+            <span class="hero-badge"><i class="fas fa-graduation-cap"></i> Ing. Informático 2024</span>
+            <span class="hero-badge"><i class="fas fa-circle hero-online"></i> Disponible</span>
+          </div>
+          <div class="hero-buttons">
+            <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
+            <a href="#portafolio" class="btn btn-secondary">Ver Proyectos en producción</a>
+          </div>
         </div>
       </div>
     </section>
@@ -297,9 +307,11 @@
     <section id="portafolio" class="section portafolio-section">
       <div class="container">
         <h2>Sistemas en Producción</h2>
-        <p class="section-subtitle">Softwares en producción</p>
-        <div class="portafolio-grid sistema-grid">
-          <div class="proyecto featured-project">
+        <p class="section-subtitle">Softwares reales desarrollados y en uso activo</p>
+        <div class="portafolio-grid-2">
+
+          <!-- CNA Upholstery -->
+          <div class="proyecto proyecto-card">
             <div class="proyecto-image-header">
               <img src="cna-upholstery.png" alt="CNA Upholstery - Sistema Completo" class="project-title-image" />
               <div class="proyecto-overlay">
@@ -313,20 +325,20 @@
               </div>
             </div>
             <div class="proyecto-content">
-              <h3>CNA UPHOLSTERY - Nueva York</h3>
+              <h3>CNA UPHOLSTERY — Nueva York</h3>
               <p>Sistema completo de gestión para tapicería profesional. Incluye catálogo de servicios, generación de
                 presupuestos, facturación automática y gestión de proyectos con más de 30 años de experiencia.</p>
               <div class="tech-stack">
                 <span class="tech-tag">HTML</span>
                 <span class="tech-tag">Node.js</span>
                 <span class="tech-tag">PHP</span>
-                <span class="tech-tag">MYSQL</span>
+                <span class="tech-tag">MySQL</span>
                 <span class="tech-tag">JavaScript</span>
               </div>
               <div class="proyecto-metrics">
                 <div class="metric">
                   <span class="metric-number">30+</span>
-                  <span class="metric-label">Años Experiencia en Tapicería</span>
+                  <span class="metric-label">Años en Tapicería</span>
                 </div>
                 <div class="metric">
                   <span class="metric-number">100%</span>
@@ -338,25 +350,59 @@
                 </div>
               </div>
               <div class="proyecto-features">
-                <div class="feature">
-                  <i class="fas fa-couch"></i>
-                  <span>Servicios Especializados de Tapicería</span>
-                </div>
-                <div class="feature">
-                  <i class="fas fa-file-invoice-dollar"></i>
-                  <span>Sistema de Facturación</span>
-                </div>
-                <div class="feature">
-                  <i class="fas fa-calculator"></i>
-                  <span>Generador de Presupuestos</span>
-                </div>
-                <div class="feature">
-                  <i class="fas fa-language"></i>
-                  <span>Bilingüe (EN/ES)</span>
-                </div>
+                <div class="feature"><i class="fas fa-couch"></i><span>Catálogo de Tapicería</span></div>
+                <div class="feature"><i class="fas fa-file-invoice-dollar"></i><span>Facturación Automática</span></div>
+                <div class="feature"><i class="fas fa-calculator"></i><span>Presupuestos Online</span></div>
+                <div class="feature"><i class="fas fa-language"></i><span>Bilingüe (EN/ES)</span></div>
               </div>
             </div>
           </div>
+
+          <!-- AquiSys -->
+          <div class="proyecto proyecto-card">
+            <div class="proyecto-image-bg aqui-gradient">
+              <div class="aqui-logo-wrap">
+                <i class="fas fa-car aqui-icon"></i>
+                <span class="aqui-brand">AquiSys</span>
+              </div>
+              <div class="proyecto-overlay">
+                <span class="status-badge">🟢 En Producción</span>
+              </div>
+            </div>
+            <div class="proyecto-content">
+              <h3>AQUISYS — Sistema de Gestión Familiar</h3>
+              <p>Plataforma integral para gestión de vehículos, mantenimiento, préstamos y gastos familiares. Monorepo con API REST, web admin y app móvil Flutter publicada en producción.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Prisma</span>
+              </div>
+              <div class="proyecto-metrics">
+                <div class="metric">
+                  <span class="metric-number">3</span>
+                  <span class="metric-label">Plataformas (API/Web/App)</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-number">24/7</span>
+                  <span class="metric-label">Notificaciones Push</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-number">PY</span>
+                  <span class="metric-label">Paraguay</span>
+                </div>
+              </div>
+              <div class="proyecto-features">
+                <div class="feature"><i class="fas fa-car"></i><span>Gestión de Vehículos</span></div>
+                <div class="feature"><i class="fas fa-wrench"></i><span>Control de Mantenimiento</span></div>
+                <div class="feature"><i class="fas fa-hand-holding-usd"></i><span>Gestión de Préstamos</span></div>
+                <div class="feature"><i class="fas fa-mobile-alt"></i><span>App Móvil (iOS/Android)</span></div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -577,9 +623,9 @@
 
   <!-- vis.js for workflow visualization -->
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
-  <script src="n8n-visualizer.js"></script>
   <script src="demo-workflows.js"></script>
-  <script src="script.js"></script>
+  <script src="js/visualizer.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
